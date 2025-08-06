@@ -1,6 +1,6 @@
 import 'package:carapp/data/models/car.dart';
 import 'package:flutter/material.dart';
-
+import 'package:carapp/presentation/widgets/car_card.dart';
 import '../widgets/car_card.dart';
 
 class CarListScreen extends StatelessWidget {

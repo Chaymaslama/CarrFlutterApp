@@ -1,3 +1,4 @@
+import 'package:carapp/presentation/pages/MapsDetailsPage.dart';
 import 'package:carapp/presentation/pages/car_details_page.dart';
 import 'package:carapp/presentation/pages/car_list_screen.dart';
 import 'package:carapp/presentation/pages/onboarding_page.dart';

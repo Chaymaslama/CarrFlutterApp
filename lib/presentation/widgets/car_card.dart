@@ -1,21 +1,21 @@
-import 'package:carapp/presentation/pages/car_details_page.dart';
 import 'package:flutter/material.dart';
 
+
 import '../../data/models/car.dart';
+import '../pages/car_details_page.dart';
 
 class CarCard extends StatelessWidget {
   final Car car;
 
   const CarCard({super.key, required this.car});
 
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>CarDetailsPage(
-            car : car
-        ))
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CarDetailsPage(car: car,))
         );
       },
       child: Container(
@@ -34,8 +34,8 @@ class CarCard extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Image.asset('assets/car_image.png',height: 120,),
-            Text(car.model,  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+            Image.asset('assets/car_image.png', height: 120,),
+            Text(car.model, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
             SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,7 +46,6 @@ class CarCard extends StatelessWidget {
                       children: [
                         Image.asset('assets/gps.png'),
                         Text(' ${car.distance.toStringAsFixed(0)}km')
-      
                       ],
                     ),
                     Row(
@@ -55,7 +54,6 @@ class CarCard extends StatelessWidget {
                         Text(' ${car.fuelCapacity.toStringAsFixed(0)}L')
                       ],
                     ),
-      
                   ],
                 ),
                 Text(
@@ -63,9 +61,8 @@ class CarCard extends StatelessWidget {
                   style: TextStyle(fontSize: 16),
                 )
               ],
-            ),
+            )
           ],
-      
         ),
       ),
     );
