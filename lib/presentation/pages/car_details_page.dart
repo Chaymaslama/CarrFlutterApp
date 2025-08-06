@@ -2,9 +2,11 @@ import 'package:carapp/presentation/widgets/car_card.dart';
 import 'package:flutter/material.dart';
 
 import '../../data/models/car.dart';
+import '../widgets/more_card.dart';
 
 class CarDetailsPage extends StatelessWidget {
-  const CarDetailsPage({super.key});
+  final Car car;
+  const CarDetailsPage({super.key, required this.car});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class CarDetailsPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          CarCard(car: Car(model: 'Fortuner GR', distance:878, fuelCapacity: 50, pricePerHour: 45),),
+          CarCard(car:  Car (model: car.model, distance: car.distance, fuelCapacity: car.fuelCapacity, pricePerHour: car.pricePerHour),),
           SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -74,6 +76,19 @@ class CarDetailsPage extends StatelessWidget {
               ],
             ),
           ),
+          Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              children: [
+                MoreCard(car :  Car (model: car.model+"-1", distance: car.distance+100, fuelCapacity: car.fuelCapacity+100, pricePerHour: car.pricePerHour+10),),
+                SizedBox(height: 5,),
+                MoreCard(car :  Car (model: car.model+"-2", distance: car.distance+200, fuelCapacity: car.fuelCapacity+200, pricePerHour: car.pricePerHour+20),),
+                SizedBox(height: 5,),
+                MoreCard(car : Car (model: car.model+"-3", distance: car.distance+300, fuelCapacity: car.fuelCapacity+300, pricePerHour: car.pricePerHour+30),)
+            
+              ],
+            ),
+          )
         ],
       ),
     );
