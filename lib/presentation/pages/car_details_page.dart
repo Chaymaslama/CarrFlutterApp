@@ -45,13 +45,15 @@ class _CarDetailsPageState extends State<CarDetailsPage> with SingleTickerProvid
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Icon(Icons.info_outline),
-            Text(' Information')],
+          children: [
+            Icon(Icons.info_outline),
+            Text(' Information')
+          ],
         ),
       ),
       body: Column(
         children: [
-          CarCard(car:  Car (model: widget.car.model, distance: widget.car.distance, fuelCapacity: widget.car.fuelCapacity, pricePerHour: widget.car.pricePerHour),),
+          CarCard(car: Car(model: widget.car.model, distance: widget.car.distance, fuelCapacity: widget.car.fuelCapacity, pricePerHour: widget.car.pricePerHour)),
           SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -73,15 +75,12 @@ class _CarDetailsPageState extends State<CarDetailsPage> with SingleTickerProvid
                     ),
                     child: Column(
                       children: [
-                        CircleAvatar(
-                          radius: 40, backgroundImage: AssetImage('assets/user.png'),
-
-                        ),
+                        CircleAvatar(radius: 40, backgroundImage: AssetImage('assets/user.png'),),
                         SizedBox(height: 10,),
                         Text('Jane Cooper',style: TextStyle(fontWeight: FontWeight.bold),),
                         Text('\$4,253',style: TextStyle(color: Colors.grey),),
                       ],
-                    ) ,
+                    ),
                   ),
                 ),
                 SizedBox(width: 20,),
@@ -97,7 +96,6 @@ class _CarDetailsPageState extends State<CarDetailsPage> with SingleTickerProvid
                       height: 170,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-
                           boxShadow: [
                             BoxShadow(
                                 color: Colors.black12,
@@ -105,7 +103,6 @@ class _CarDetailsPageState extends State<CarDetailsPage> with SingleTickerProvid
                                 spreadRadius: 5
                             )
                           ]
-
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
@@ -115,7 +112,6 @@ class _CarDetailsPageState extends State<CarDetailsPage> with SingleTickerProvid
                           child: Image.asset('assets/maps.png',fit: BoxFit.cover,),
                         ),
                       ),
-
                     ),
                   ),
                 )
@@ -126,12 +122,11 @@ class _CarDetailsPageState extends State<CarDetailsPage> with SingleTickerProvid
             padding: EdgeInsets.all(20),
             child: Column(
               children: [
-                MoreCard(car :  Car (model: widget.car.model+"-1", distance: widget.car.distance+100, fuelCapacity: widget.car.fuelCapacity+100, pricePerHour: widget.car.pricePerHour+10),),
+                MoreCard(car: Car(model: widget.car.model+"-1", distance: widget.car.distance+100, fuelCapacity: widget.car.fuelCapacity+100, pricePerHour: widget.car.pricePerHour+10)),
                 SizedBox(height: 5,),
-                MoreCard(car :  Car (model: widget.car.model+"-2", distance: widget.car.distance+200, fuelCapacity: widget.car.fuelCapacity+200, pricePerHour: widget.car.pricePerHour+20),),
+                MoreCard(car: Car(model: widget.car.model+"-2", distance: widget.car.distance+200, fuelCapacity: widget.car.fuelCapacity+200, pricePerHour: widget.car.pricePerHour+20)),
                 SizedBox(height: 5,),
-                MoreCard(car : Car (model: widget.car.model+"-3", distance: widget.car.distance+300, fuelCapacity: widget.car.fuelCapacity+300, pricePerHour: widget.car.pricePerHour+30),)
-
+                MoreCard(car: Car(model: widget.car.model+"-3", distance: widget.car.distance+300, fuelCapacity: widget.car.fuelCapacity+300, pricePerHour: widget.car.pricePerHour+30)),
               ],
             ),
           )

@@ -51,7 +51,7 @@ dev_dependencies:
   latlong2: ^0.9.1
   bloc: ^8.0.0
   flutter_bloc: ^8.1.6
-
+  get_it: ^7.6.7
 
 
 # For information on the generic Dart part of this file, see the

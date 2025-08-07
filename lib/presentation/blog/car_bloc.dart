@@ -21,11 +21,8 @@ class CarBloc extends Bloc<CarEvent, CarState> {
       try {
         // Attempt to fetch the list of cars using the use case
         final cars = await getCars.call();
-
-        // If successful, emit a loaded state with the list of cars
         emit(CarsLoaded(cars));
       } catch (e) {
-        // If an error occurs, emit an error state with the error message
         emit(CarsError(e.toString()));
       }
     });
